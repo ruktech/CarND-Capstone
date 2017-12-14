@@ -15,8 +15,8 @@ class TLClassifier(object):
 	     
 	K.clear_session()
 	
-        model_arch_path = 'keras_model/squeezenet_transfer_learned_architecture.json'
-        model_weights_path = 'keras_model/squeezenet_transfer_learned_weights.h5'
+        model_arch_path = 'keras_model/squeezenet_transfer_learned_real_and_simulator_architecture.json'
+        model_weights_path = 'keras_model/squeezenet_transfer_learned_real_and_simulator_weights.h5'
 
         # load keras model architecture
         json_file = open(model_arch_path)
@@ -60,7 +60,6 @@ class TLClassifier(object):
 	rospy.logwarn('Inference Time - ' + str(toc-tic))
 	prediction_labels = [TrafficLightState.GREEN, TrafficLightState.RED, TrafficLightState.YELLOW, TrafficLightState.UNKNOWN]
 	labels_names = ['GREEN', 'RED', 'YELLOW', 'UNKNOWN']
-
 
 
 	light_state = prediction_labels[prediction.argmax()]
