@@ -58,8 +58,8 @@ class TLClassifier(object):
 	prediction = self.model.predict(np.array([cropped_img]))[0]
 	toc = time()
 	rospy.logwarn('Inference Time - ' + str(toc-tic))
-	prediction_labels = [TrafficLightState.GREEN, TrafficLightState.RED, TrafficLightState.YELLOW, TrafficLightState.UNKNOWN]
-	labels_names = ['GREEN', 'RED', 'YELLOW', 'UNKNOWN']
+	prediction_labels = [TrafficLightState.GREEN, TrafficLightState.RED, TrafficLightState.UNKNOWN, TrafficLightState.YELLOW]
+	labels_names = ['GREEN', 'RED', 'UNKNOWN','YELLOW']
 
 
 	light_state = prediction_labels[prediction.argmax()]
