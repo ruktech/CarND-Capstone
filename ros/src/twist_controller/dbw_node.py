@@ -86,7 +86,13 @@ class DBWNode(object):
     def dbw_cb(self, status):
         # /vehicle/dbw_enabled message for manual mode in simulator
         self.dbw = status.data
-        rospy.logwarn("DBW status changed to '{}''.".format(self.dbw))
+        rospy.logwarn("DBW status changed to '{}'.".format(self.dbw))
+
+	# reset the PID controllers if DBW is deactivated so that if DWB is reactivated
+	# the controllers don't have historical error
+	if not self.dbw:
+		self.controller.reset()
+		rospy.logwarn("Vehicle controllers have been reset.")
 
     def loop(self):
         rate = rospy.Rate(50) # 50Hz
