@@ -1,5 +1,5 @@
-![Banner](images/udacity_banner.png)
-![Logo](images/team_banner.PNG)
+![Banner](./images/banner.png)
+![Logo](./images/team_banner.png)
 
 This repository contains the results of Team "Wow That Was Fast"'s capstone project for the [Udacity Self-Driving Car Engineer Nanodegree Program](https://www.udacity.com/drive). The project utilizes Ubuntu Linux 14.04 with [Robot Operating System (ROS)](https://www.ros.org) Indigo and/or Ubuntu Linux 16.04 with ROS Kinetic, the [Udacity System Integration Simulator](https://github.com/udacity/CarND-Capstone/releases), and code written in C++ and Python to provide a System Integration solution to the self-driving car problem. The code developed will be tested on Udacity's real-world test vehicle (a Lincoln MKZ that the company has named "Carla") during December 2017. 
 
