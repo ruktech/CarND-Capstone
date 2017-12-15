@@ -12,9 +12,9 @@ This repository contains the results of Team "Wow That Was Fast"'s capstone proj
 |     Name    |      Location     |     LinkedIn     |          |
 |-------------|-------------------|------------------|----------|
 | Kyle Martin <br> (**Team Lead**) | Phoenix, Arizona | [linkedin.com/in/kylemart](https://www.linkedin.com/in/kylemart) | <img src="./images/kyle.png" alt="Kyle" width="150" height="150"> |
-| Farrukh Ali | Los Angeles, CA | [linkedin.com/in/farrukhtech](https://www.linkedin.com/in/farrukhtech) | <img src="./images/farrukh.png" alt="Farrukh" width="150" height="150"> |
+| Farrukh Ali | Los Angeles, California | [linkedin.com/in/farrukhtech](https://www.linkedin.com/in/farrukhtech) | <img src="./images/farrukh.png" alt="Farrukh" width="150" height="150"> |
 | Michael Matthews | Sydney, Australia | [linkedin.com/in/michael-matthews-59378933](https://www.linkedin.com/in/michael-matthews-59378933) | <img src="./images/michael.png" alt="Michael" width="150" height="150"> |
-| Daniel Kröhnert | Duesseldorf, Germany | [linkedin.com/in/daniel-kröhnert-411235128](https://www.linkedin.com/in/daniel-kr%C3%B6hnert-411235128) | <img src="./images/placeholder.png" alt="Daniel" width="150" height="150"> |
+| Daniel Kröhnert | Duesseldorf, Germany | [linkedin.com/in/daniel-kröhnert-411235128](https://www.linkedin.com/in/daniel-kr%C3%B6hnert-411235128) | <img src="./images/daniel.png" alt="Daniel" width="150" height="150"> |
 | Jordan Lee | Tucson, Arizona | [linkedin.com/in/TBD](https://www.linkedin.com/in/TBD/) | <img src="./images/jordan.png" alt="Jordan" width="150" height="150"> |
 
 
