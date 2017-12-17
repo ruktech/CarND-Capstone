@@ -4,6 +4,7 @@ from geometry_msgs.msg import PoseStamped, Pose, Point, Quaternion
 from styx_msgs.msg import TrafficLightArray, TrafficLight, TrafficLightState, TrafficLightWaypoint
 from styx_msgs.msg import Lane
 from sensor_msgs.msg import Image
+from std_msgs.msg import Bool
 from cv_bridge import CvBridge, CvBridgeError
 from light_classification.tl_classifier import TLClassifier
 import tf
@@ -48,8 +49,9 @@ class TLDetector(object):
         self.waypoints_count = 0
         self.rot = 0
 
-        sub1 = rospy.Subscriber('/current_pose', PoseStamped, self.pose_cb)
-        sub2 = rospy.Subscriber('/base_waypoints', Lane, self.waypoints_cb)
+        rospy.Subscriber('/current_pose', PoseStamped, self.pose_cb)
+        rospy.Subscriber('/base_waypoints', Lane, self.waypoints_cb)
+        rospy.Subscriber('/vehicle/dbw_enabled', Bool, self.dbw_cb)
 
         # get config values for site
         config_string = rospy.get_param("/traffic_light_config")
@@ -62,10 +64,10 @@ class TLDetector(object):
         simulator. When testing on the vehicle, the color state will not be available. You'll need to
         rely on the position of the light and the camera image to predict it.
         '''
-        sub3 = rospy.Subscriber('/vehicle/traffic_lights', TrafficLightArray, self.traffic_cb)
-        sub6 = rospy.Subscriber('/image_color', Image, self.image_cb)
+        rospy.Subscriber('/vehicle/traffic_lights', TrafficLightArray, self.traffic_cb)
+        rospy.Subscriber('/image_color', Image, self.image_cb)
         if self.config['data_record_flag']:
-            sub7 = rospy.Subscriber('/image_color', Image, self.record_training_data_callback, queue_size=1)
+            rospy.Subscriber('/image_color', Image, self.record_training_data_callback, queue_size=1)
 
         self.upcoming_red_light_pub = rospy.Publisher('/traffic_waypoint', TrafficLightWaypoint, queue_size=1)
 
@@ -162,6 +164,11 @@ class TLDetector(object):
                 self.upcoming_red_light_pub.publish(TrafficLightWaypoint(self.last_wp, TrafficLightState(self.state)))
             self.state_count += 1
 
+
+    def dbw_cb(self, status):
+        # /vehicle/dbw_enabled message for manual mode in simulator
+        self.upcoming_red_light_pub.publish(TrafficLightWaypoint(-1, TrafficLightState(TrafficLightState.UNKNOWN)))
+
     def get_closest_waypoint(self, pose):
         """Identifies the closest path waypoint to the given position
             https://en.wikipedia.org/wiki/Closest_pair_of_points_problem
@@ -233,7 +240,7 @@ class TLDetector(object):
                     self.light_visible = True
                 return light_waypoint, stopline_waypoint, state
         if self.light_visible:
-            rospy.logwarn("traffic light passed.")
+            rospy.logwarn("traffic light stopline passed.")
             self.light_visible = False
         return -1, -1, TrafficLightState.UNKNOWN
 
