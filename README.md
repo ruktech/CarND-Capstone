@@ -1,4 +1,23 @@
-This is the project repo for the final project of the Udacity Self-Driving Car Nanodegree: Programming a Real Self-Driving Car. For more information about the project, see the project introduction [here](https://classroom.udacity.com/nanodegrees/nd013/parts/6047fe34-d93c-4f50-8336-b70ef10cb4b2/modules/e1a23b06-329a-4684-a717-ad476f0d8dff/lessons/462c933d-9f24-42d3-8bdc-a08a5fc866e4/concepts/5ab4b122-83e6-436d-850f-9f4d26627fd9).
+![Banner](./images/banner.png)
+![Logo](./images/team_banner.png)
+
+This repository contains the results of Team "Wow That Was Fast"'s capstone project for the [Udacity Self-Driving Car Engineer Nanodegree Program](https://www.udacity.com/drive). The project utilizes Ubuntu Linux 14.04 with [Robot Operating System (ROS)](https://www.ros.org) Indigo and/or Ubuntu Linux 16.04 with ROS Kinetic, the [Udacity System Integration Simulator](https://github.com/udacity/CarND-Capstone/releases), and code written in C++ and Python to provide a System Integration solution to the self-driving car problem. The code developed will be tested on Udacity's real-world test vehicle (a Lincoln MKZ that the company has named "Carla") during December 2017. 
+
+#### Check out our results in the Udacity simulator:
+
+[[![YouTube](https://img.youtube.com/vi/4lzDBvFPQMM/0.jpg)](https://www.youtube.com)]
+
+
+### Team Members
+|     Name    |      Location     |     LinkedIn     |          |
+|-------------|-------------------|------------------|----------|
+| Kyle Martin <br> (**Team Lead**) | Phoenix, Arizona | [linkedin.com/in/kylemart](https://www.linkedin.com/in/kylemart) | <img src="./images/kyle.png" alt="Kyle" width="150" height="150"> |
+| Farrukh Ali | Los Angeles, California | [linkedin.com/in/farrukhtech](https://www.linkedin.com/in/farrukhtech) | <img src="./images/farrukh.png" alt="Farrukh" width="150" height="150"> |
+| Michael Matthews | Sydney, Australia | [linkedin.com/in/michael-matthews-59378933](https://www.linkedin.com/in/michael-matthews-59378933) | <img src="./images/michael.png" alt="Michael" width="150" height="150"> |
+| Daniel Kröhnert | Duesseldorf, Germany | [linkedin.com/in/daniel-kröhnert-411235128](https://www.linkedin.com/in/daniel-kr%C3%B6hnert-411235128) | <img src="./images/daniel.png" alt="Daniel" width="150" height="150"> |
+| Jordan Lee | Tucson, Arizona | [linkedin.com/in/TBD](https://www.linkedin.com/in/TBD/) | <img src="./images/jordan.png" alt="Jordan" width="150" height="150"> |
+
+
 
 ### Native Installation
 
@@ -34,7 +53,7 @@ docker run -p 4567:4567 -v $PWD:/capstone -v /tmp/log:/root/.ros/ --rm -it capst
 
 1. Clone the project repository
 ```bash
-git clone https://github.com/udacity/CarND-Capstone.git
+git clone https://github.com/kylemartin1/CarND-Capstone.git
 ```
 
 2. Install python dependencies

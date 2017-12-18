@@ -81,12 +81,13 @@ class WaypointUpdater(object):
                 # Not sure of requirement if it is suddenly 'RED' when at an impossible
                 # breaking distance.
                 distance = self.distance(self.way_points, nearest_waypoint, self.traffic_waypoint)
+                stop_distance = self.stoppingdistance(self.velocity, 0.0, -1.5)
                 if self.approach_velocity == None:
                     self.approach_velocity = self.velocity
-                    rospy.logwarn("distance to stopline: {:.5}m, approaching velocity: {:.5}m/s.".format(distance, self.velocity))
+                    rospy.logwarn("distance to stopline: {:.5}m, approaching velocity: {:.5}m/s, stopping distance: {:.5}m.".format(distance, self.velocity, stop_distance))
                 # Check if we can or should stop
                 # TODO: Distance for Yellow Lights needs to be calculated
-                if self.traffic_state == TrafficLightState.RED or (self.traffic_state == TrafficLightState.YELLOW and distance>50.0):
+                if self.traffic_state == TrafficLightState.RED or (self.traffic_state == TrafficLightState.YELLOW and distance>stop_distance):
                     stopping = True
                     self.stop(self.way_points, nearest_waypoint, self.traffic_waypoint)
 #                else:
